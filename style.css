@@ -650,6 +650,176 @@ body {
 }
 
 /* ==========================================================================
+   SEZIONE TEAM - DETTAGLI INTERATTIVI
+   ========================================================================== */
+
+/* Container principale per i dettagli del team member */
+.team-details {
+    position: absolute;
+    /* Posizionamento assoluto per overlay */
+    top: 0;
+    /* Copre tutta la card dall'alto */
+    left: 0;
+    /* Copre tutta la card da sinistra */
+    right: 0;
+    /* Copre tutta la card a destra */
+    bottom: 0;
+    /* Copre tutta la card dal basso */
+    background: rgba(26, 26, 26, 0.95);
+    /* Sfondo scuro semi-trasparente */
+    /*backdrop-filter: blur(10px);*/
+    /* Effetto glassmorphism blur */
+    border-radius: 20px;
+    /* Bordi arrotondati come la card */
+    opacity: 0;
+    /* Nascosto di default */
+    transform: translateY(100%);
+    /* Inizia fuori vista (sotto) */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transizione fluida */
+    z-index: 10;
+    /* Sopra tutti gli altri elementi */
+    overflow: hidden;
+    /* Nasconde contenuto che esce */
+}
+
+/* Stato attivo dei dettagli team */
+.team-details.active {
+    opacity: 1;
+    /* Completamente visibile */
+    transform: translateY(0);
+    /* Posizione normale (slide up) */
+}
+
+/* Container del contenuto dei dettagli */
+.team-details-content {
+    padding: 2rem;
+    /* Padding interno generoso */
+    height: 100%;
+    /* Altezza piena del container */
+    display: flex;
+    /* Layout flessibile */
+    flex-direction: column;
+    /* Disposizione verticale */
+    justify-content: center;
+    /* Centra verticalmente il contenuto */
+    text-align: center;
+    /* Testo centrato */
+}
+
+/* Titolo nome nel pannello dettagli */
+.team-details h5 {
+    color: var(--avalanche-white);
+    /* Colore bianco del design system */
+    font-weight: 700;
+    /* Peso font bold */
+    font-size: 1.3rem;
+    /* Dimensione titolo */
+    margin-bottom: 0.5rem;
+    /* Spazio sotto il nome */
+}
+
+/* Descrizione del ruolo */
+.role-description {
+    color: var(--accent-blue);
+    /* Colore blu accent del sistema */
+    font-size: 0.9rem;
+    /* Dimensione ridotta */
+    text-transform: uppercase;
+    /* Tutto maiuscolo */
+    letter-spacing: 0.5px;
+    /* Spaziatura tra lettere */
+    margin-bottom: 1rem;
+    /* Spazio sotto il ruolo */
+}
+
+/* Biografia del team member */
+.bio {
+    color: var(--avalanche-silver);
+    /* Colore argento per testo secondario */
+    font-size: 0.85rem;
+    /* Dimensione testo piccola */
+    line-height: 1.6;
+    /* Interlinea per leggibilità */
+    margin-bottom: 1.5rem;
+    /* Spazio generoso sotto la bio */
+}
+
+/* Container per le competenze */
+.skills {
+    display: flex;
+    /* Layout flessibile */
+    flex-wrap: wrap;
+    /* Permette wrapping su più righe */
+    gap: 0.5rem;
+    /* Spazio tra i tag */
+    justify-content: center;
+    /* Centra i tag orizzontalmente */
+}
+
+/* Singolo tag competenza */
+.skill-tag {
+    background: rgba(74, 158, 255, 0.1);
+    /* Sfondo blu trasparente */
+    color: var(--accent-blue);
+    /* Testo blu */
+    padding: 0.3rem 0.8rem;
+    /* Padding interno piccolo */
+    border-radius: 15px;
+    /* Bordi molto arrotondati */
+    font-size: 0.75rem;
+    /* Dimensione font piccola */
+    font-weight: 500;
+    /* Peso font medio */
+    border: 1px solid var(--accent-blue);
+    /* Bordo blu */
+}
+
+/* Cursore pointer per le card cliccabili */
+.team-card {
+    cursor: pointer;
+    /* Indica che è cliccabile */
+    position: relative;
+    /* Per posizionamento pseudo-elementi */
+}
+
+/* Indicatore hover per interazione */
+.team-card::after {
+    content: 'Clicca per scoprire di più';
+    /* Testo indicativo */
+    position: absolute;
+    /* Posizionamento assoluto */
+    bottom: 10px;
+    /* Vicino al fondo della card */
+    left: 50%;
+    /* Centro orizzontale */
+    transform: translateX(-50%);
+    /* Centra perfettamente */
+    background: var(--gradient-accent);
+    /* Gradiente blu-ciano */
+    color: white;
+    /* Testo bianco */
+    padding: 0.1rem 0.6rem;
+    /* Padding piccolo */
+    border-radius: 15px;
+    /* Bordi arrotondati */
+    font-size: 0.7rem;
+    /* Font molto piccolo */
+    opacity: 0;
+    /* Nascosto di default */
+    transition: opacity 0.3s ease;
+    /* Transizione opacità */
+    pointer-events: none;
+    /* Non interferisce con i click */
+}
+
+/* Mostra indicatore on hover */
+.team-card:hover::after {
+    opacity: 1;
+    /* Rende visibile l'indicatore */
+}
+
+/* ==========================================================================
            FOOTER
            ========================================================================== */
 .footer {
@@ -1531,7 +1701,7 @@ body {
     /* Posizione assoluta */
     background: rgba(255, 255, 255, 0.05);
     /* Sfondo semi-trasparente */
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px);/*
     /* Effetto glass */
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* Bordo sottile */
@@ -1619,7 +1789,7 @@ body {
 .value-card {
     background: rgba(255, 255, 255, 0.03);
     /* Sfondo semi-trasparente */
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px);*/
     /* Effetto glass */
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* Bordo sottile */
@@ -1938,7 +2108,7 @@ body {
 .cta-container {
     background: rgba(255, 255, 255, 0.03);
     /* Sfondo semi-trasparente */
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px);*/
     /* Effetto glass */
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* Bordo sottile */
