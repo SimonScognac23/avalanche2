@@ -4,106 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalanche Coding - Digital Innovation</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Chi Siamo - Avalanche Coding</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome per le icone -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Foglio di stile personalizzato -->
-    <link href="style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
+    <!-- CSS Personalizzato - stesso foglio di stile della homepage -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navbar - Barra di navigazione fissa -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- ===== HEADER NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container">
-            <!-- Logo del brand -->
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-mountain"></i>
-                Avalanche Coding
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-triangle me-2"></div>
+                <span class="brand-text">Avalanche Coding</span>
             </a>
+
+            <!-- Menu Toggle per Mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Menu di navigazione -->
+
+            <!-- Menu Navigation -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Link Home -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
-                    <!-- Link Chi Siamo - collegato alla pagina chiSiamo.html -->
                     <li class="nav-item">
                         <a class="nav-link active" href="chiSiamo.html">Chi Siamo</a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Sezione Team -->
-    <section class="about-team section-padding mt-5">
-        <div class="container">
-            <!-- Header sezione -->
-            <div class="text-center mb-5">
-                <span class="badge-custom">Il Nostro Team</span>
-                <h2 class="section-title">
-                    Incontra i <span class="gradient-text">professionisti</span> dietro Avalanche
-                </h2>
-            </div>
+    <!-- ===== HERO SECTION CHI SIAMO ===== -->
+    <section class="hero-about-section">
+        <!-- Sfere decorative animate -->
+        <div class="floating-sphere sphere-1"></div>
+        <div class="floating-sphere sphere-2"></div>
+        <div class="floating-sphere sphere-3"></div>
 
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-12 text-center">
+                    <!-- Badge identificativo sezione -->
+                    <div class="section-badge mb-4">
+                        <i class="fas fa-users me-2"></i>
+                        Il Nostro Team
+                    </div>
+
+                    <!-- Titolo principale -->
+                    <h1 class="about-hero-title mb-4">
+                        Incontra i <span class="text-gradient">professionisti</span><br>
+                        dietro Avalanche Coding
+                    </h1>
+
+                    <!-- Sottotitolo -->
+                    <p class="about-hero-subtitle mb-5">
+                        Un team di esperti appassionati che trasforma visioni digitali in realtà.<br>
+                        Ogni membro porta competenze uniche per creare soluzioni innovative e all'avanguardia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEZIONE TEAM CARDS ===== -->
+    <section class="team-section py-5">
+        <div class="container">
             <!-- Grid del team -->
             <div class="row g-4 justify-content-center">
-                <!-- Membro 1 -->
-                <div class="col-lg-3 col-md-6">
+
+                <!-- ===== TEAM MEMBER 1: MARCO ROSSI ===== -->
+                <div class="col-lg-4 col-md-6">
                     <div class="team-card" onclick="toggleTeamInfo(1)">
+                        <!-- Immagine placeholder del team member -->
                         <div class="team-image">
                             <div class="image-placeholder">
                                 <i class="fas fa-user"></i>
                             </div>
+                            <!-- Overlay con icona info -->
+                            <div class="team-overlay">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
                         </div>
+
+                        <!-- Informazioni base visibili -->
                         <div class="team-info">
                             <h4 class="team-name">Marco Rossi</h4>
                             <p class="team-role">CEO & Founder</p>
+                            <div class="team-preview">
+                                <p>Visionario con 10+ anni di esperienza nel settore tech...</p>
+                            </div>
                         </div>
-                        <!-- Div informazioni esteso -->
+
+                        <!-- Pannello dettagli esteso (nascosto di default) -->
                         <div class="team-details" id="teamDetails1">
                             <div class="team-details-content">
                                 <h5>Marco Rossi</h5>
                                 <p class="role-description">CEO & Founder</p>
                                 <p class="bio">
                                     Marco è il visionario dietro Avalanche Coding. Con oltre 10 anni di esperienza nel
-                                    settore tech,
-                                    ha guidato numerosi progetti di trasformazione digitale per aziende Fortune 500.
+                                    settore tech, ha guidato numerosi progetti di trasformazione digitale per aziende
+                                    Fortune 500.
                                     La sua passione per l'innovazione e la leadership lo rendono il motore trainante del
                                     nostro team.
                                 </p>
                                 <div class="skills">
                                     <span class="skill-tag">Leadership</span>
                                     <span class="skill-tag">Strategy</span>
+                                    <span class="skill-tag">Digital Transformation</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Membro 2 -->
-                <div class="col-lg-3 col-md-6">
+                <!-- ===== TEAM MEMBER 2: LAURA BIANCHI ===== -->
+                <div class="col-lg-4 col-md-6">
                     <div class="team-card" onclick="toggleTeamInfo(2)">
+                        <!-- Immagine placeholder del team member -->
                         <div class="team-image">
                             <div class="image-placeholder">
                                 <i class="fas fa-user"></i>
                             </div>
+                            <!-- Overlay con icona info -->
+                            <div class="team-overlay">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
                         </div>
+
+                        <!-- Informazioni base visibili -->
                         <div class="team-info">
                             <h4 class="team-name">Laura Bianchi</h4>
                             <p class="team-role">Lead Designer</p>
+                            <div class="team-preview">
+                                <p>Esperta in UX/UI design e design thinking innovativo...</p>
+                            </div>
                         </div>
-                        <!-- Div informazioni esteso -->
+
+                        <!-- Pannello dettagli esteso (nascosto di default) -->
                         <div class="team-details" id="teamDetails2">
                             <div class="team-details-content">
                                 <h5>Laura Bianchi</h5>
@@ -117,25 +170,38 @@
                                 <div class="skills">
                                     <span class="skill-tag">UI/UX Design</span>
                                     <span class="skill-tag">Figma</span>
+                                    <span class="skill-tag">Design Thinking</span>
+                                    <span class="skill-tag">Prototyping</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Membro 3 -->
-                <div class="col-lg-3 col-md-6">
+                <!-- ===== TEAM MEMBER 3: GIUSEPPE VERDI ===== -->
+                <div class="col-lg-4 col-md-6">
                     <div class="team-card" onclick="toggleTeamInfo(3)">
+                        <!-- Immagine placeholder del team member -->
                         <div class="team-image">
                             <div class="image-placeholder">
                                 <i class="fas fa-user"></i>
                             </div>
+                            <!-- Overlay con icona info -->
+                            <div class="team-overlay">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
                         </div>
+
+                        <!-- Informazioni base visibili -->
                         <div class="team-info">
                             <h4 class="team-name">Giuseppe Verdi</h4>
                             <p class="team-role">Senior Developer</p>
+                            <div class="team-preview">
+                                <p>Sviluppatore esperto in tecnologie moderne e architetture scalabili...</p>
+                            </div>
                         </div>
-                        <!-- Div informazioni esteso -->
+
+                        <!-- Pannello dettagli esteso (nascosto di default) -->
                         <div class="team-details" id="teamDetails3">
                             <div class="team-details-content">
                                 <h5>Giuseppe Verdi</h5>
@@ -149,6 +215,9 @@
                                 <div class="skills">
                                     <span class="skill-tag">JavaScript</span>
                                     <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">AI/ML</span>
                                 </div>
                             </div>
                         </div>
@@ -158,86 +227,128 @@
         </div>
     </section>
 
-    <!-- Footer - Piè di pagina -->
-    <footer class="footer">
+    <!-- ===== SEZIONE VALORI AZIENDALI ===== -->
+    <section class="values-section py-5">
         <div class="container">
-            <div class="row justify-content-center text-center">
-                <!-- Colonna 1 - Info azienda e social -->
-                <div class="col-lg-4 mb-4">
-                    <h5 class="footer-title">
-                        <i class="fas fa-mountain me-2"></i>
-                        Avalanche Coding
-                    </h5>
-                    <p class="footer-text">
-                        Innovazione digitale e sviluppo software di alta qualità.
-                        Trasformiamo le tue idee in soluzioni tecnologiche all'avanguardia.
-                    </p>
-                    <!--
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <div class="section-badge mb-4">
+                        <i class="fas fa-heart me-2"></i>
+                        I Nostri Valori
                     </div>
-                -->
+                    <h2 class="section-title">
+                        Quello in cui <span class="text-gradient">crediamo</span>
+                    </h2>
                 </div>
-                <!-- Colonna 2 - Lista servizi -->
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h6 class="footer-subtitle">Servizi</h6>
-                    <ul class="footer-links">
-                        <li><a href="#">Sviluppo Web</a></li>
-                        <li><a href="#">App Mobile</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
-                        <li><a href="#">Consulenza IT</a></li>
-                    </ul>
+            </div>
+
+            <div class="row g-4">
+                <!-- Valore 1: Innovazione -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="value-title">Innovazione</h4>
+                        <p class="value-description">
+                            Spingiamo costantemente i confini della tecnologia per creare soluzioni che anticipano il
+                            futuro.
+                        </p>
+                    </div>
                 </div>
-                <!-- Colonna 3 - Info azienda -->
 
-                <!-- Colonna 4 - Info contatti -->
-                <div class="col-lg-4 mb-4">
-                    <h6 class="footer-subtitle">Contatti</h6>
-                    <div class="contact-info">
-
-                        <p class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            +39 34545445345
+                <!-- Valore 2: Qualità -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h4 class="value-title">Qualità</h4>
+                        <p class="value-description">
+                            Ogni progetto è realizzato con la massima attenzione ai dettagli e agli standard più
+                            elevati.
                         </p>
-                        <p class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            info@avalanchecoding.it
-                        </p>
+                    </div>
+                </div>
 
+                <!-- Valore 3: Collaborazione -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="value-title">Collaborazione</h4>
+                        <p class="value-description">
+                            Lavoriamo insieme ai nostri clienti come partner per raggiungere obiettivi comuni.
+                        </p>
                     </div>
                 </div>
             </div>
-            <!-- Separatore -->
-            <hr class="footer-divider">
-            <!-- Riga copyright e link legali -->
-            <div class="row align-items-center">
-                <div class="col-md-12 text-center">
-                    <p class="footer-copyright mb-0">
-                        &copy; 2025 Avalanche Coding. All rights reserved.
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Colonna Logo e Descrizione -->
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        <div class="logo-triangle me-2"></div>
+                        <span class="brand-text">Avalanche Coding</span>
+                    </div>
+                    <p class="footer-description">
+                        Innovazione digitale e sviluppo software di alta qualità.
+                        Trasformiamo le tue idee in soluzioni tecnologiche all'avanguardia.
                     </p>
                 </div>
-                <!--
-                <div class="col-md-6 text-md-end">
-                    <a href="#" class="footer-link me-3">Privacy Policy</a>
-                    <a href="#" class="footer-link me-3">Cookie Policy</a>
-                    <a href="#" class="footer-link me-3">Terms of Service</a>
-                    <a href="#" class="footer-link me-3">Sitemap</a>
+
+                <!-- Colonna Servizi -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">SERVIZI</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Sviluppo Web</a></li>
+                        <li><a href="#" class="footer-link">App Mobile</a></li>
+                        <li><a href="#" class="footer-link">UI/UX Design</a></li>
+                        <li><a href="#" class="footer-link">Cloud Solutions</a></li>
+                        <li><a href="#" class="footer-link">Consulenza IT</a></li>
+                    </ul>
                 </div>
-            -->
+
+                <!-- Colonna Contatti -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">CONTATTI</h5>
+                    <div class="footer-contact">
+                        <div class="contact-item d-flex align-items-center mb-2">
+                            <i class="fas fa-phone contact-icon-small me-3"></i>
+                            <span>+39 3454545345</span>
+                        </div>
+                        <div class="contact-item d-flex align-items-center">
+                            <i class="fas fa-envelope contact-icon-small me-3"></i>
+                            <span>info@avalanchecoding.it</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="row mt-4 pt-4 border-top border-secondary">
+                <div class="col-12 text-center">
+                    <p class="copyright-text mb-0">
+                        © 2025 Avalanche Coding. All rights reserved.
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JavaScript personalizzato per funzionalità team -->
     <script>
         /**
+         * ===== GESTIONE TEAM DETAILS - SISTEMA INTERATTIVO =====
          * Funzione per gestire l'apertura/chiusura dei dettagli del team
          * @param {number} memberId - ID numerico del membro del team (1, 2, 3, etc.)
          */
@@ -267,7 +378,39 @@
             currentDetail.classList.toggle('active');
         }
 
+        /**
+         * ===== ANIMAZIONI SMOOTH SCROLL =====
+         * Gestisce lo scroll fluido per i link di navigazione
+         */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        /**
+         * ===== EFFETTO NAVBAR ON SCROLL =====
+         * Aggiunge/rimuove classe alla navbar quando si scrolla
+         */
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.custom-navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
         /*
+         * ===== DOCUMENTAZIONE SISTEMA TEAM CARDS =====
+         * 
          * COME FUNZIONA IL SISTEMA:
          * 
          * 1. Ogni card del team ha onclick="toggleTeamInfo(X)" dove X è il numero del membro
@@ -280,9 +423,10 @@
          * - Click su "Marco Rossi" → toggleTeamInfo(1) → apre teamDetails1
          * - Click su "Laura Bianchi" → toggleTeamInfo(2) → chiude teamDetails1, apre teamDetails2
          * - Click nuovamente su "Laura Bianchi" → toggleTeamInfo(2) → chiude teamDetails2
+         * 
+         * 
          */
     </script>
-
 </body>
 
 </html>
