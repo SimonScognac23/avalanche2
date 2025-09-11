@@ -33,21 +33,17 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Link Home -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <!-- Link Chi Siamo - collegato alla pagina chiSiamo.html -->
                     <li class="nav-item">
-                        <a class="nav-link" href="chiSiamo.html">Chi Siamo</a>
+                        <a class="nav-link active" href="chiSiamo.html">Chi Siamo</a>
                     </li>
 
                 </ul>
             </div>
         </div>
     </nav>
-
-
-
-
 
     <!-- Sezione Team -->
     <section class="about-team section-padding mt-5">
@@ -162,55 +158,6 @@
         </div>
     </section>
 
-
-    <script>
-        /**
-         * Funzione per gestire l'apertura/chiusura dei dettagli del team
-         * @param {number} memberId - ID numerico del membro del team (1, 2, 3, etc.)
-         */
-        function toggleTeamInfo(memberId) {
-
-            // FASE 1: Chiusura di tutti gli altri pannelli aperti
-            // Seleziona tutti gli elementi con classe 'team-details' nella pagina
-            const allDetails = document.querySelectorAll('.team-details');
-
-            // Cicla attraverso ogni pannello trovato
-            allDetails.forEach(detail => {
-                // Se il pannello NON è quello che stiamo per aprire/chiudere
-                if (detail.id !== `teamDetails${memberId}`) {
-                    // Rimuovi la classe 'active' per chiuderlo
-                    // Questo garantisce che solo un pannello sia aperto alla volta
-                    detail.classList.remove('active');
-                }
-            });
-
-            // FASE 2: Toggle del pannello corrente
-            // Trova il pannello specifico del membro cliccato usando l'ID
-            // L'ID è costruito come: teamDetails1, teamDetails2, teamDetails3, etc.
-            const currentDetail = document.getElementById(`teamDetails${memberId}`);
-
-            // Toggle della classe 'active':
-            // - Se il pannello è chiuso (senza 'active') → lo apre aggiungendo 'active'
-            // - Se il pannello è aperto (con 'active') → lo chiude rimuovendo 'active'
-            currentDetail.classList.toggle('active');
-        }
-
-        /*
-         * COME FUNZIONA IL SISTEMA:
-         * 
-         * 1. Ogni card del team ha onclick="toggleTeamInfo(X)" dove X è il numero del membro
-         * 2. Ogni pannello dettagli ha id="teamDetailsX" corrispondente
-         * 3. Il CSS .team-details.active gestisce l'animazione di apertura
-         * 4. Solo un pannello può essere aperto contemporaneamente
-         * 5. Cliccando sulla stessa card si chiude il pannello (toggle)
-         * 
-         * ESEMPIO DI UTILIZZO:
-         * - Click su "Marco Rossi" → toggleTeamInfo(1) → apre teamDetails1
-         * - Click su "Laura Bianchi" → toggleTeamInfo(2) → chiude teamDetails1, apre teamDetails2
-         * - Click nuovamente su "Laura Bianchi" → toggleTeamInfo(2) → chiude teamDetails2
-         */
-    </script>
-
     <!-- Footer - Piè di pagina -->
     <footer class="footer">
         <div class="container">
@@ -288,6 +235,53 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /**
+         * Funzione per gestire l'apertura/chiusura dei dettagli del team
+         * @param {number} memberId - ID numerico del membro del team (1, 2, 3, etc.)
+         */
+        function toggleTeamInfo(memberId) {
+            // FASE 1: Chiusura di tutti gli altri pannelli aperti
+            // Seleziona tutti gli elementi con classe 'team-details' nella pagina
+            const allDetails = document.querySelectorAll('.team-details');
+
+            // Cicla attraverso ogni pannello trovato
+            allDetails.forEach(detail => {
+                // Se il pannello NON è quello che stiamo per aprire/chiudere
+                if (detail.id !== `teamDetails${memberId}`) {
+                    // Rimuovi la classe 'active' per chiuderlo
+                    // Questo garantisce che solo un pannello sia aperto alla volta
+                    detail.classList.remove('active');
+                }
+            });
+
+            // FASE 2: Toggle del pannello corrente
+            // Trova il pannello specifico del membro cliccato usando l'ID
+            // L'ID è costruito come: teamDetails1, teamDetails2, teamDetails3, etc.
+            const currentDetail = document.getElementById(`teamDetails${memberId}`);
+
+            // Toggle della classe 'active':
+            // - Se il pannello è chiuso (senza 'active') → lo apre aggiungendo 'active'
+            // - Se il pannello è aperto (con 'active') → lo chiude rimuovendo 'active'
+            currentDetail.classList.toggle('active');
+        }
+
+        /*
+         * COME FUNZIONA IL SISTEMA:
+         * 
+         * 1. Ogni card del team ha onclick="toggleTeamInfo(X)" dove X è il numero del membro
+         * 2. Ogni pannello dettagli ha id="teamDetailsX" corrispondente
+         * 3. Il CSS .team-details.active gestisce l'animazione di apertura
+         * 4. Solo un pannello può essere aperto contemporaneamente
+         * 5. Cliccando sulla stessa card si chiude il pannello (toggle)
+         * 
+         * ESEMPIO DI UTILIZZO:
+         * - Click su "Marco Rossi" → toggleTeamInfo(1) → apre teamDetails1
+         * - Click su "Laura Bianchi" → toggleTeamInfo(2) → chiude teamDetails1, apre teamDetails2
+         * - Click nuovamente su "Laura Bianchi" → toggleTeamInfo(2) → chiude teamDetails2
+         */
+    </script>
 
 </body>
 
