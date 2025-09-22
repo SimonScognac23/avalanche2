@@ -82,150 +82,133 @@
         </div>
     </section>
 
-    <!-- ===== SEZIONE TEAM CARDS ===== -->
-    <section class="team-section py-5">
-        <div class="container">
-            <!-- Grid del team -->
-            <div class="row g-4 justify-content-center">
+    <!-- Grid del team -->
+    <div class="row g-4 justify-content-center align-items-stretch">
 
-                <!-- ===== TEAM MEMBER 1: MARCO ROSSI ===== -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card" onclick="toggleTeamInfo(1)">
-                        <!-- Immagine placeholder del team member -->
-                        <div class="team-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <!-- Overlay con icona info -->
-                            <div class="team-overlay">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                        </div>
-
-                        <!-- Informazioni base visibili -->
-                        <div class="team-info">
-                            <h4 class="team-name">Marco Rossi</h4>
-                            <p class="team-role">CEO & Founder</p>
-                            <div class="team-preview">
-                                <p>Visionario con 10+ anni di esperienza nel settore tech...</p>
-                            </div>
-                        </div>
-
-                        <!-- Pannello dettagli esteso (nascosto di default) -->
-                        <div class="team-details" id="teamDetails1">
-                            <div class="team-details-content">
-                                <h5>Marco Rossi</h5>
-                                <p class="role-description">CEO & Founder</p>
-                                <p class="bio">
-                                    Marco è il visionario dietro Avalanche Coding. Con oltre 10 anni di esperienza nel
-                                    settore tech, ha guidato numerosi progetti di trasformazione digitale per aziende
-                                    Fortune 500.
-                                    La sua passione per l'innovazione e la leadership lo rendono il motore trainante del
-                                    nostro team.
-                                </p>
-                                <div class="skills">
-                                    <span class="skill-tag">Leadership</span>
-                                    <span class="skill-tag">Strategy</span>
-                                    <span class="skill-tag">Digital Transformation</span>
-                                </div>
-                            </div>
-                        </div>
+        <!-- ===== TEAM MEMBER 1: MARCO ROSSI ===== -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="team-card h-100">
+                <!-- Immagine placeholder del team member -->
+                <div class="team-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
                     </div>
                 </div>
 
-                <!-- ===== TEAM MEMBER 2: LAURA BIANCHI ===== -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card" onclick="toggleTeamInfo(2)">
-                        <!-- Immagine placeholder del team member -->
-                        <div class="team-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <!-- Overlay con icona info -->
-                            <div class="team-overlay">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                        </div>
-
-                        <!-- Informazioni base visibili -->
-                        <div class="team-info">
-                            <h4 class="team-name">Laura Bianchi</h4>
-                            <p class="team-role">Lead Designer</p>
-                            <div class="team-preview">
-                                <p>Esperta in UX/UI design e design thinking innovativo...</p>
-                            </div>
-                        </div>
-
-                        <!-- Pannello dettagli esteso (nascosto di default) -->
-                        <div class="team-details" id="teamDetails2">
-                            <div class="team-details-content">
-                                <h5>Laura Bianchi</h5>
-                                <p class="role-description">Lead Designer</p>
-                                <p class="bio">
-                                    Laura trasforma idee complesse in esperienze utente intuitive e coinvolgenti.
-                                    Con un background in design thinking e psicologia cognitiva,
-                                    crea interfacce che non solo sono belle da vedere, ma anche funzionali e
-                                    accessibili.
-                                </p>
-                                <div class="skills">
-                                    <span class="skill-tag">UI/UX Design</span>
-                                    <span class="skill-tag">Figma</span>
-                                    <span class="skill-tag">Design Thinking</span>
-                                    <span class="skill-tag">Prototyping</span>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Informazioni base visibili -->
+                <div class="team-info">
+                    <h4 class="team-name">Marco Rossi</h4>
+                    <p class="team-role">CEO & Founder</p>
+                    <div class="team-preview">
+                        <p>Visionario con 10+ anni di esperienza nel settore tech...</p>
                     </div>
                 </div>
 
-                <!-- ===== TEAM MEMBER 3: GIUSEPPE VERDI ===== -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card" onclick="toggleTeamInfo(3)">
-                        <!-- Immagine placeholder del team member -->
-                        <div class="team-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <!-- Overlay con icona info -->
-                            <div class="team-overlay">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                        </div>
-
-                        <!-- Informazioni base visibili -->
-                        <div class="team-info">
-                            <h4 class="team-name">Giuseppe Verdi</h4>
-                            <p class="team-role">Senior Developer</p>
-                            <div class="team-preview">
-                                <p>Sviluppatore esperto in tecnologie moderne e architetture scalabili...</p>
-                            </div>
-                        </div>
-
-                        <!-- Pannello dettagli esteso (nascosto di default) -->
-                        <div class="team-details" id="teamDetails3">
-                            <div class="team-details-content">
-                                <h5>Giuseppe Verdi</h5>
-                                <p class="role-description">Senior Developer</p>
-                                <p class="bio">
-                                    Giuseppe è il mago del codice del nostro team. Esperto in multiple tecnologie,
-                                    dalla blockchain all'AI, riesce a dare vita alle idee più ambiziose.
-                                    La sua attenzione ai dettagli e la passione per il codice pulito garantiscono
-                                    soluzioni robuste e scalabili.
-                                </p>
-                                <div class="skills">
-                                    <span class="skill-tag">JavaScript</span>
-                                    <span class="skill-tag">React</span>
-                                    <span class="skill-tag">Node.js</span>
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">AI/ML</span>
-                                </div>
-                            </div>
+                <!-- Pannello dettagli esteso (visibile su hover) -->
+                <div class="team-details">
+                    <div class="team-details-content">
+                        <h5>Marco Rossi</h5>
+                        <p class="role-description">CEO & Founder</p>
+                        <p class="bio">
+                            Marco è il visionario dietro Avalanche Coding. Con oltre 10 anni di esperienza nel
+                            settore tech, ha guidato numerosi progetti di trasformazione digitale per aziende
+                            Fortune 500.
+                            La sua passione per l'innovazione e la leadership lo rendono il motore trainante del
+                            nostro team.
+                        </p>
+                        <div class="skills">
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Strategy</span>
+                            <span class="skill-tag">Digital Transformation</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- ===== TEAM MEMBER 2: LAURA BIANCHI ===== -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="team-card h-100">
+                <!-- Immagine placeholder del team member -->
+                <div class="team-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <!-- Informazioni base visibili -->
+                <div class="team-info">
+                    <h4 class="team-name">Laura Bianchi</h4>
+                    <p class="team-role">Lead Designer</p>
+                    <div class="team-preview">
+                        <p>Esperta in UX/UI design e design thinking innovativo...</p>
+                    </div>
+                </div>
+
+                <!-- Pannello dettagli esteso (visibile su hover) -->
+                <div class="team-details">
+                    <div class="team-details-content">
+                        <h5>Laura Bianchi</h5>
+                        <p class="role-description">Lead Designer</p>
+                        <p class="bio">
+                            Laura trasforma idee complesse in esperienze utente intuitive e coinvolgenti.
+                            Con un background in design thinking e psicologia cognitiva,
+                            crea interfacce che non solo sono belle da vedere, ma anche funzionali e
+                            accessibili.
+                        </p>
+                        <div class="skills">
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Design Thinking</span>
+                            <span class="skill-tag">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TEAM MEMBER 3: GIUSEPPE VERDI ===== -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="team-card h-100">
+                <!-- Immagine placeholder del team member -->
+                <div class="team-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <!-- Informazioni base visibili -->
+                <div class="team-info">
+                    <h4 class="team-name">Giuseppe Verdi</h4>
+                    <p class="team-role">Senior Developer</p>
+                    <div class="team-preview">
+                        <p>Sviluppatore esperto in tecnologie moderne e architetture scalabili...</p>
+                    </div>
+                </div>
+
+                <!-- Pannello dettagli esteso (visibile su hover) -->
+                <div class="team-details">
+                    <div class="team-details-content">
+                        <h5>Giuseppe Verdi</h5>
+                        <p class="role-description">Senior Developer</p>
+                        <p class="bio">
+                            Giuseppe è il mago del codice del nostro team. Esperto in multiple tecnologie,
+                            dalla blockchain all'AI, riesce a dare vita alle idee più ambiziose.
+                            La sua attenzione ai dettagli e la passione per il codice pulito garantiscono
+                            soluzioni robuste e scalabili.
+                        </p>
+                        <div class="skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== SEZIONE VALORI AZIENDALI ===== -->
     <section class="values-section py-5">

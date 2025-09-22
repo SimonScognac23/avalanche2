@@ -185,7 +185,7 @@
 }
 
 /* ==========================================================================
-   SEZIONE TEAM - DETTAGLI INTERATTIVI (da documento fornito + miglioramenti)
+   SEZIONE TEAM - DETTAGLI INTERATTIVI CON HOVER EFFECT
    ========================================================================== */
 
 /* Container principale per i dettagli del team member */
@@ -210,6 +210,8 @@
     /* Bordi arrotondati come la card */
     opacity: 0;
     /* Nascosto di default */
+    visibility: hidden;
+    /* Non interagibile quando nascosto */
     transform: translateY(100%);
     /* Inizia fuori vista (sotto) */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -222,12 +224,43 @@
     /* Bordo accent sottile */
 }
 
-/* Stato attivo dei dettagli team */
-.team-details.active {
+/* Stato attivo dei dettagli team - ATTIVATO SU HOVER DELLA CARD */
+.team-card:hover .team-details,
+.team-card.mobile-hover .team-details {
     opacity: 1;
     /* Completamente visibile */
+    visibility: visible;
+    /* Interagibile */
     transform: translateY(0);
     /* Posizione normale (slide up) */
+}
+
+/* Supporto specifico per hover su desktop */
+@media (hover: hover) and (pointer: fine) {
+
+    /* Questi stili si applicano solo su dispositivi con hover preciso (desktop) */
+    .team-card:hover .team-details {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Supporto specifico per dispositivi touch */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Questi stili si applicano solo su dispositivi touch puri (mobile) */
+    .team-card.mobile-hover .team-details {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .team-card.mobile-hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-large);
+        border-color: rgba(74, 158, 255, 0.3);
+    }
 }
 
 /* Container del contenuto dei dettagli */
@@ -325,46 +358,6 @@
     background: rgba(74, 158, 255, 0.2);
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
-}
-
-/* Indicatore hover per interazione */
-.team-card::after {
-    content: 'Clicca per scoprire di più';
-    /* Testo indicativo */
-    position: absolute;
-    /* Posizionamento assoluto */
-    bottom: 10px;
-    /* Vicino al fondo della card */
-    left: 50%;
-    /* Centro orizzontale */
-    transform: translateX(-50%);
-    /* Centra perfettamente */
-    background: var(--gradient-primary);
-    /* Gradiente blu-ciano */
-    color: white;
-    /* Testo bianco */
-    padding: 0.4rem 0.8rem;
-    /* Padding medio */
-    border-radius: 15px;
-    /* Bordi arrotondati */
-    font-size: 0.7rem;
-    /* Font molto piccolo */
-    opacity: 0;
-    /* Nascosto di default */
-    transition: opacity var(--transition-normal);
-    /* Transizione opacità */
-    pointer-events: none;
-    /* Non interferisce con i click */
-    font-weight: 600;
-    /* Font semi-bold */
-    letter-spacing: 0.3px;
-    /* Spaziatura lettere */
-}
-
-/* Mostra indicatore on hover */
-.team-card:hover::after {
-    opacity: 1;
-    /* Rende visibile l'indicatore */
 }
 
 /* ============================================================================================================================================================================
@@ -1216,7 +1209,7 @@ html {
     transform: translateY(0);
 }
 
-/* ==========================================================================
+/* ==========================================================================----------------------------------------------------------------------------------------------------
    FOOTER
    ========================================================================== */
 
